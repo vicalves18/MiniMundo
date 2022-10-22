@@ -1,7 +1,5 @@
 package br.com.ebix.model;
 
-import java.util.ArrayList;
-
 public class Aluno {
 	private String nome;
 	private String matricula;
@@ -71,7 +69,6 @@ public class Aluno {
 //	}
 
 	public Notas getNota() {
-		//String.format("%.2f", x)
 		return nota;
 	}
 
