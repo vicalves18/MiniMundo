@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import br.com.ebix.dao.AlunoDaoImpl;
+import br.com.ebix.dao.NotaDaoImpl;
 
 public class Turma {
 	private String turma;

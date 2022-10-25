@@ -1,12 +1,15 @@
 package br.com.ebix.test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.ebix.dao.AlunoDaoImpl;
+import br.com.ebix.dao.NotaDaoImpl;
 import br.com.ebix.dao.TurmaDao;
 import br.com.ebix.dao.TurmaDaoImpl;
 import br.com.ebix.model.Aluno;
+import br.com.ebix.model.BoletimAluno;
 import br.com.ebix.model.Turma;
 
 public class TestaTurma {
@@ -19,7 +22,7 @@ public class TestaTurma {
 		
 		//AlunoDaoImpl lista = new AlunoDaoImpl();
 		//lista.recuperarAlunos();
-		Turma turma1 = new Turma("Turma1");
+		
 		
 //		TurmaDaoImpl turma = new TurmaDaoImpl();
 //		turma.listarTurmas();
@@ -35,10 +38,29 @@ public class TestaTurma {
 //		lista2.add(aluno4);
 		
 		//Turma turma2 = new Turma("Turma2", lista2);
-		System.out.println(turma1);
-		System.out.println(turma1.getAlunos());
-		//System.out.println(lista.recuperarAlunos());
+		//System.out.println(turma1);
 		//System.out.println(turma1.getAlunos());
+		
+//		Aluno aluno = new Aluno("1", "Aluno1");
+//		List b = aluno.getNota();
+//		System.out.println(b);
+//		System.out.println(b.get(0));
+//		System.out.println(b.get(1));
+//		System.out.println(b.get(2));
+		
+//		NotaDaoImpl nota = new NotaDaoImpl();
+//		List<BigDecimal> n = nota.recuperarNota();
+//		System.out.println(n);
+//		System.out.println(n.get(0));
+//		System.out.println(n.get(1));
+//		System.out.println(n.get(2));
+		
+		Turma turma1 = new Turma("Turma1");
+		//BoletimAluno boletim = new BoletimAluno();
+		//boletim.gerarBoletim();
+		//System.out.println(boletim);
+		//System.out.println(lista.recuperarAlunos());
+		System.out.println(turma1.getAlunos());
 		//System.out.println("----------");
 		//System.out.println(turma2);
 		//System.out.println(turma2.getAlunos());

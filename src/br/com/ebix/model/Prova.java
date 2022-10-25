@@ -1,9 +1,11 @@
 package br.com.ebix.model;
 
+import java.math.BigDecimal;
+
 public class Prova {
 	private String tipo;
 
-	public Prova(String tipo) {
+	public Prova() {
 		this.tipo = tipo;
 	}
 	
@@ -13,6 +15,11 @@ public class Prova {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public BigDecimal gerarNota() {
+		
+		return null;
 	}
 	
 	

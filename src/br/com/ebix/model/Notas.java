@@ -3,25 +3,28 @@ package br.com.ebix.model;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Notas {
 	//private Double nota;
 	//peso da prova;
 	//private Prova prova;
-
+	//private ArrayList<BigDecimal> notas;
+	
 	Random random = new Random();
 	double n1 = random.nextDouble()*10;
 	double n2 = random.nextDouble()*10;
 	double n3 = random.nextDouble()*10;
 
 	
-	BigDecimal nota1 = new BigDecimal(n1).setScale(2, RoundingMode.HALF_UP);
-	BigDecimal nota2 = new BigDecimal(n2).setScale(2, RoundingMode.HALF_UP);
-	BigDecimal nota3 = new BigDecimal(n3).setScale(2, RoundingMode.HALF_UP);
+	BigDecimal nota1 = new BigDecimal(n1).setScale(2, RoundingMode.	HALF_EVEN);
+	BigDecimal nota2 = new BigDecimal(n2).setScale(2, RoundingMode.HALF_EVEN);
+	BigDecimal nota3 = new BigDecimal(n3).setScale(2, RoundingMode.HALF_EVEN);
 	//double nota = Math.random() *10.0;
 	
 	//DecimalFormat df = new DecimalFormat("#.00");
+
 	
 	public Notas(BigDecimal nota1, BigDecimal nota2, BigDecimal nota3) {
 		//String.format("%.2f", x)

@@ -1,15 +1,29 @@
 package br.com.ebix.model;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.ebix.bo.CalculaMedia;
+import br.com.ebix.bo.VerificarStatusAluno;
+import br.com.ebix.dao.NotaDaoImpl;
+import br.com.ebix.enums.ProvaEnum;
+import br.com.ebix.enums.StatusEnum;
+
 public class Aluno {
 	private String nome;
-	private String matricula;
+	private int matricula;
 	private Turma turma;
-	private Notas nota;
+	//private Notas nota;
+	private List<NotaDaoImpl> nota;
+	private CalculaMedia media;
+	private VerificarStatusAluno situacao;
+	private StatusEnum status;
 	
-	public Aluno(String matricula, String nome) {
+	public Aluno(int matricula, String nome) {
 		this.matricula = matricula;
 		this.nome = nome;
-		this.nota = new Notas();
+		this.nota = new ArrayList<>();
 		
 	}
 	
@@ -29,11 +43,11 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	public String getMatricula() {
+	public int getMatricula() {
 		return matricula;
 	}
 
-	public void setMatricula(String matricula) {
+	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
 
@@ -68,17 +82,44 @@ public class Aluno {
 //		return n;
 //	}
 
-	public Notas getNota() {
-		return nota;
+
+	public List<BigDecimal> getNota() {
+		NotaDaoImpl nota = new NotaDaoImpl();
+		
+//		NotaDaoImpl notas = new NotaDaoImpl();
+		//List<BigDecimal> n = nota.recuperarNota();
+		List a = nota.recuperarNota();
+		return a;
 	}
 
-	public void setNota(Notas nota) {
+	public void setNota(List<NotaDaoImpl> nota) {
 		this.nota = nota;
+	}
+	
+	public CalculaMedia getMedia() {
+		return media;
+	}
+
+	public void setMedia(CalculaMedia media) {
+		this.media = media;
+	}
+
+//	public <VerificaSituacaoAluno> StatusEnum getSituacao() {
+//		VerificarStatusAluno situ = new VerificarStatusAluno();
+//		Aluno a = new Aluno(getMatricula(), getNome());
+//		status = situ.statusAluno(a.getMedia(), a);
+//		return status;
+//	}
+
+	public void setSituacao(VerificarStatusAluno situacao) {
+		this.situacao = situacao;
 	}
 
 	@Override
 	public String toString() {
-		return "\nMatricula: "+this.matricula+ ", Nome: "+this.nome + getNota() + "," + getTurma() ;
+		return "\nMatricula: "+getMatricula()+ ", Nome: "+getNome()+ getNota() + ", Media: " + getMedia() /*+ ", Situacao: " + getSituacao()*/;
 	}
+
+
 	
 }
